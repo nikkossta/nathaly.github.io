@@ -1,114 +1,150 @@
 <!DOCTYPE html>
-<html lang="de" class="dark">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dein Name | Links</title>
+    <title>Fitness & Food Journey</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome für schicke Icons -->
+    <!-- FontAwesome für Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Outfit (Moderner, cleaner Font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        // Unsere Clean-Girl Farbpalette
+                        brand: {
+                            beige: '#FBF5EF',
+                            cream: '#FFF8F0',
+                            sage: '#A8CABA', // Ein dezenter Salbei-Ton für Akzente
+                            text: '#5C5C5C', // Ein weiches Grau statt hartem Schwarz
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .glow {
-            box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.3);
+        /* Leichter Schatten für den Clean-Look */
+        .clean-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+<body class="bg-brand-beige text-brand-text min-h-screen flex items-center justify-center p-4 relative selection:bg-brand-sage/30">
 
-    <!-- Dynamischer Hintergrund-Glow -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Dezenter Hintergrund-Akzent (ein Kreis oben rechts) -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-cream rounded-full opacity-60 pointer-events-none"></div>
 
     <!-- Hauptcontainer -->
-    <div class="w-full max-w-md z-10 space-y-6">
+    <div class="w-full max-w-lg z-10 space-y-8">
 
         <!-- Profil-Sektion -->
-        <div class="text-center space-y-3">
+        <div class="text-center space-y-4">
             <div class="relative inline-block">
-                <!-- Avatar mit animiertem Rand -->
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur opacity-75 animate-pulse"></div>
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" 
-                     alt="Profilbild" 
-                     class="relative w-24 h-24 rounded-full object-cover mx-auto border-2 border-slate-900">
+                <!-- Avatar-Rahmen (Clean-Style: dünner Ring) -->
+                <div class="w-32 h-32 rounded-full ring-2 ring-brand-sage/50 p-1 mx-auto bg-white clean-shadow">
+                    <img src="https://images.unsplash.com/photo-1611673328868-8462d5f371c6?q=80&w=400&auto=format&fit=crop&h=400" 
+                         alt="Fitness & Food Bloggerin" 
+                         class="w-full h-full rounded-full object-cover">
+                </div>
             </div>
-            <h1 class="text-xl font-bold tracking-tight">Dein Name / Brand</h1>
-            <p class="text-sm text-slate-400 max-w-xs mx-auto">Creator, Developer & Designer 🚀<br>Hier findest du all meine wichtigen Projekte.</p>
+            <div class="space-y-1">
+                <h1 class="text-2xl font-bold text-brand-text tracking-tight">Anna's Healthy Habits 🌱</h1>
+                <p class="text-sm text-gray-500 max-w-sm mx-auto font-light">Fitness Coach & Foodie | Rezepte, Workouts & Motivation für einen balancierten Lifestyle ✨</p>
+            </div>
         </div>
 
         <!-- Link-Liste -->
-        <div class="space-y-3">
+        <div class="space-y-4">
 
-            <!-- Link 1: Haupt-Website -->
-            <a href="https://deine-website.de" target="_blank" 
-               class="group relative flex items-center justify-between p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:bg-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <span class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-globe"></i>
-                    </span>
-                    <span class="font-medium text-sm">Meine Haupt-Website</span>
+            <!-- Link 1: Aktuelles Programm / Highlight -->
+            <a href="#" target="_blank" 
+               class="group block w-full p-5 rounded-2xl bg-white clean-shadow border border-gray-100 hover:-translate-y-1 transition-transform duration-300 hover:border-brand-sage/30">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-xl bg-brand-sage/10 flex items-center justify-center text-brand-sage text-lg">
+                            <i class="fa-solid fa-fire"></i>
+                        </span>
+                        <div>
+                            <span class="font-semibold text-brand-text block">Neuer 7-Tage Fitness Plan 💪</span>
+                            <span class="text-xs text-gray-400 font-light">Jetzt kostenlos starten!</span>
+                        </div>
+                    </div>
+                    <span class="text-brand-sage/50 group-hover:text-brand-sage transition-colors"><i class="fas fa-chevron-right text-sm"></i></span>
                 </div>
-                <i class="fa-solid fa-arrow-right text-xs text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-1 transition-all"></i>
             </a>
 
-            <!-- Link 2: GitHub / Portfolio -->
-            <a href="https://github.com" target="_blank" 
-               class="group relative flex items-center justify-between p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:bg-slate-800/80 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <span class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-github"></i>
-                    </span>
-                    <span class="font-medium text-sm">GitHub Projekte</span>
+            <!-- Link 2: Rezepte Blog -->
+            <a href="#" target="_blank" 
+               class="group block w-full p-5 rounded-2xl bg-white clean-shadow border border-gray-100 hover:-translate-y-1 transition-transform duration-300 hover:border-brand-sage/30">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-xl bg-brand-beige flex items-center justify-center text-gray-600 text-lg">
+                            <i class="fa-solid fa-utensils"></i>
+                        </span>
+                        <div>
+                            <span class="font-semibold text-brand-text block">Meine Lieblingsrezepte 🥗</span>
+                            <span class="text-xs text-gray-400 font-light">High Protein & Easy</span>
+                        </div>
+                    </div>
+                    <span class="text-brand-sage/50 group-hover:text-brand-sage transition-colors"><i class="fas fa-chevron-right text-sm"></i></span>
                 </div>
-                <i class="fa-solid fa-arrow-right text-xs text-slate-500 group-hover:text-purple-400 group-hover:translate-x-1 transition-all"></i>
             </a>
 
-            <!-- Link 3: YouTube / Video -->
-            <a href="https://youtube.com" target="_blank" 
-               class="group relative flex items-center justify-between p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:bg-slate-800/80 hover:border-red-500/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <span class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-youtube"></i>
-                    </span>
-                    <span class="font-medium text-sm">Neues YouTube Video</span>
+            <!-- Link 3: Instagram -->
+            <a href="#" target="_blank" 
+               class="group block w-full p-5 rounded-2xl bg-white clean-shadow border border-gray-100 hover:-translate-y-1 transition-transform duration-300 hover:border-brand-sage/30">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-xl bg-brand-beige flex items-center justify-center text-gray-600 text-lg">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                        <div>
+                            <span class="font-semibold text-brand-text block">Tägliche Motivation ☀️</span>
+                            <span class="text-xs text-gray-400 font-light">Folge mir auf Insta</span>
+                        </div>
+                    </div>
+                    <span class="text-brand-sage/50 group-hover:text-brand-sage transition-colors"><i class="fas fa-chevron-right text-sm"></i></span>
                 </div>
-                <i class="fa-solid fa-arrow-right text-xs text-slate-500 group-hover:text-red-400 group-hover:translate-x-1 transition-all"></i>
             </a>
-
-            <!-- Link 4: Newsletter / Substack -->
-            <a href="https://substack.com" target="_blank" 
-               class="group relative flex items-center justify-between p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:bg-slate-800/80 hover:border-amber-500/50 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <span class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-envelope-open-text"></i>
-                    </span>
-                    <span class="font-medium text-sm">Wöchentlicher Newsletter</span>
+            
+            <!-- Link 4: Rabattcode -->
+            <a href="#" target="_blank" 
+               class="group block w-full p-5 rounded-2xl bg-white clean-shadow border border-gray-100 hover:-translate-y-1 transition-transform duration-300 hover:border-brand-sage/30">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <span class="w-12 h-12 rounded-xl bg-rose-50 flex items-center justify-center text-rose-400 text-lg">
+                            <i class="fa-solid fa-tag"></i>
+                        </span>
+                        <div>
+                            <span class="font-semibold text-brand-text block">Rabattcodes 🏷️</span>
+                            <span class="text-xs text-gray-400 font-light">Meine Supps & Kleidung</span>
+                        </div>
+                    </div>
+                    <span class="text-brand-sage/50 group-hover:text-brand-sage transition-colors"><i class="fas fa-chevron-right text-sm"></i></span>
                 </div>
-                <i class="fa-solid fa-arrow-right text-xs text-slate-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all"></i>
             </a>
 
         </div>
 
         <!-- Social Icons Footer -->
-        <div class="flex justify-center space-x-4 pt-4">
-            <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-700 transition-colors">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-700 transition-colors">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-700 transition-colors">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
+        <div class="flex justify-center gap-6 pt-6 text-gray-400">
+            <a href="#" class="hover:text-brand-sage transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="hover:text-brand-sage transition-colors text-xl"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="hover:text-brand-sage transition-colors text-xl"><i class="fa-solid fa-envelope"></i></a>
         </div>
 
-        <!-- Footer Branding -->
-        <div class="text-center text-xs text-slate-600 pt-2">
-            Built with ❤️ & Tailwind
-        </div>
+         <!-- Footer -->
+        <footer class="text-center text-xs text-gray-300 font-light pt-6 pb-2">
+            Created with Love by BFF <span class="text-brand-sage">♥</span>
+        </footer>
 
     </div>
 
