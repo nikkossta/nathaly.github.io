@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome für Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Outfit (Moderner, cleaner Font) -->
+    <!-- Google Fonts: Outfit -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -18,12 +18,11 @@
                         sans: ['Outfit', 'sans-serif'],
                     },
                     colors: {
-                        // Unsere Clean-Girl Farbpalette
                         brand: {
                             beige: '#FBF5EF',
                             cream: '#FFF8F0',
-                            sage: '#A8CABA', // Ein dezenter Salbei-Ton für Akzente
-                            text: '#5C5C5C', // Ein weiches Grau statt hartem Schwarz
+                            sage: '#A8CABA',
+                            text: '#5C5C5C',
                         }
                     }
                 }
@@ -31,7 +30,6 @@
         }
     </script>
     <style>
-        /* Leichter Schatten für den Clean-Look */
         .clean-shadow {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
@@ -39,7 +37,7 @@
 </head>
 <body class="bg-brand-beige text-brand-text min-h-screen flex items-center justify-center p-4 relative selection:bg-brand-sage/30">
 
-    <!-- Dezenter Hintergrund-Akzent (ein Kreis oben rechts) -->
+    <!-- Dezenter Hintergrund-Akzent -->
     <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-cream rounded-full opacity-60 pointer-events-none"></div>
 
     <!-- Hauptcontainer -->
@@ -48,7 +46,6 @@
         <!-- Profil-Sektion -->
         <div class="text-center space-y-4">
             <div class="relative inline-block">
-                <!-- Avatar-Rahmen (Clean-Style: dünner Ring) -->
                 <div class="w-32 h-32 rounded-full ring-2 ring-brand-sage/50 p-1 mx-auto bg-white clean-shadow">
                     <img src="https://images.unsplash.com/photo-1611673328868-8462d5f371c6?q=80&w=400&auto=format&fit=crop&h=400" 
                          alt="Fitness & Food Bloggerin" 
@@ -64,7 +61,7 @@
         <!-- Link-Liste -->
         <div class="space-y-4">
 
-            <!-- Link 1: Aktuelles Programm / Highlight -->
+            <!-- Link 1 -->
             <a href="#" target="_blank" 
                class="group block w-full p-5 rounded-2xl bg-white clean-shadow border border-gray-100 hover:-translate-y-1 transition-transform duration-300 hover:border-brand-sage/30">
                 <div class="flex items-center justify-between">
@@ -81,7 +78,7 @@
                 </div>
             </a>
 
-            <!-- Link 2: Rezepte Blog -->
+            <!-- Link 2 -->
             <a href="#" target="_blank" 
                class="group block w-full p-5 rounded-2xl bg-white clean-shadow border border-gray-100 hover:-translate-y-1 transition-transform duration-300 hover:border-brand-sage/30">
                 <div class="flex items-center justify-between">
@@ -98,7 +95,7 @@
                 </div>
             </a>
 
-            <!-- Link 3: Instagram -->
+            <!-- Link 3 -->
             <a href="#" target="_blank" 
                class="group block w-full p-5 rounded-2xl bg-white clean-shadow border border-gray-100 hover:-translate-y-1 transition-transform duration-300 hover:border-brand-sage/30">
                 <div class="flex items-center justify-between">
@@ -115,7 +112,7 @@
                 </div>
             </a>
             
-            <!-- Link 4: Rabattcode -->
+            <!-- Link 4 -->
             <a href="#" target="_blank" 
                class="group block w-full p-5 rounded-2xl bg-white clean-shadow border border-gray-100 hover:-translate-y-1 transition-transform duration-300 hover:border-brand-sage/30">
                 <div class="flex items-center justify-between">
@@ -135,18 +132,78 @@
         </div>
 
         <!-- Social Icons Footer -->
-        <div class="flex justify-center gap-6 pt-6 text-gray-400">
+        <div class="flex justify-center gap-6 pt-2 text-gray-400">
             <a href="#" class="hover:text-brand-sage transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
             <a href="#" class="hover:text-brand-sage transition-colors text-xl"><i class="fa-brands fa-youtube"></i></a>
             <a href="#" class="hover:text-brand-sage transition-colors text-xl"><i class="fa-solid fa-envelope"></i></a>
         </div>
 
-         <!-- Footer -->
-        <footer class="text-center text-xs text-gray-300 font-light pt-6 pb-2">
-            Created with Love by BFF <span class="text-brand-sage">♥</span>
+        <!-- Footer mit Impressum-Trigger -->
+        <footer class="text-center text-xs text-gray-400 font-light pt-4 pb-2 space-y-2">
+            <div>Created with Love by BFF <span class="text-brand-sage">♥</span></div>
+            <div>
+                <button onclick="toggleImpressum(true)" class="hover:text-brand-text underline transition-colors">
+                    Impressum
+                </button>
+            </div>
         </footer>
 
     </div>
+
+    <!-- Impressum Modal (Standardmäßig versteckt) -->
+    <div id="impressum-modal" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md p-6 rounded-3xl clean-shadow relative max-h-[85vh] overflow-y-auto space-y-4">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+                <h2 class="font-bold text-lg text-brand-text">Impressum</h2>
+                <button onclick="toggleImpressum(false)" class="w-8 h-8 rounded-full bg-brand-beige flex items-center justify-center text-gray-500 hover:text-brand-text">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="text-xs text-gray-500 space-y-3 font-light leading-relaxed">
+                <div>
+                    <strong class="text-brand-text block">Angaben gemäß § 5 TMG:</strong>
+                    Vorname Nachname<br>
+                    Musterstraße 123<br>
+                    12345 Musterstadt
+                </div>
+                <div>
+                    <strong class="text-brand-text block">Kontakt:</strong>
+                    Telefon: +49 (0) 123 456789<br>
+                    E-Mail: hallo@beispiel.de
+                </div>
+                <div>
+                    <strong class="text-brand-text block">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong>
+                    Vorname Nachname<br>
+                    Musterstraße 123<br>
+                    12345 Musterstadt
+                </div>
+                <div class="pt-2 text-[10px] text-gray-400">
+                    Hinweis: Bitte die Platzhalter durch die echten Daten deiner Freundin ersetzen.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript für das Modal -->
+    <script>
+        function toggleImpressum(show) {
+            const modal = document.getElementById('impressum-modal');
+            if (show) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+        
+        // Modal schließen, wenn man außerhalb klickt
+        window.onclick = function(event) {
+            const modal = document.getElementById('impressum-modal');
+            if (event.target == modal) {
+                toggleImpressum(false);
+            }
+        }
+    </script>
 
 </body>
 </html>
